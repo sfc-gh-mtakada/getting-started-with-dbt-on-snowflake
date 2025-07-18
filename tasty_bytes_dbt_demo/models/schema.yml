@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+  - name: test
+    description: 'テストテーブル'
+
+    columns:
+      - name: id
+        description: id
+      - name: "テスト"
+        description: "テスト列"

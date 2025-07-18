@@ -14,6 +14,16 @@
   -- `BEGIN` happens here:
   {{ run_hooks(pre_hooks, inside_transaction=True) }}
 
+　　
+  {% set tbl_cfg = config.get('tables') %}
+  {% set rel_cfg = config.get('relationships', []) %}
+  {% set sql = semantic_view_from_relations(
+      tables        = tbl_cfg,
+      relationships = rel_cfg,
+      view_name     = identifier,
+      view_schema   = schema,
+      view_db       = database) %}
+
   -- build model
   {% call statement('main') -%}
     create or replace semantic view {{ target_relation }}
