@@ -1,4 +1,5 @@
   -- depends_on: {{ ref('orders') }}
+
 {{ config(
   materialized='semantic_view', 
   tables = [

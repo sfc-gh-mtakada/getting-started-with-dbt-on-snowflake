@@ -18,6 +18,9 @@ clean-targets: [target, dbt_modules]
 
 ## Models
 models:
+  +persist_docs:
+    relation: true
+    columns:  true
   tasty_bytes:
     staging:
       +materialized: view
